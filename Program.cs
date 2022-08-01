@@ -40,9 +40,22 @@ public class Program
             //If current char is \ and index + 1 isnt over the list lenght (a.k.a check for newline)
             if (input[a] == '\\' && a + 1 <= input.Length)
             {
-                if (input[a+1] == 'n')
-                output += table.FindHexStringByName("newline");
-                a++;
+                switch(input[a + 1])
+                {
+                    case 'n': //newline
+                        {
+                            output += table.FindHexStringByName("newline");
+                            break;
+                        }
+                    case 'q': //quotes (")
+                        {
+                            output += table.FindHexStringByName("quote");
+                            break;
+                        }
+                    default:
+                        break;
+                }
+                a++; //advances by 1 letter otherwise n or q would be added to output
                 continue;
             }
             //Check for letter in database
