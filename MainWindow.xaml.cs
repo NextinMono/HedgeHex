@@ -30,8 +30,8 @@ namespace HedgeHex
         {
             get
             {
-                string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                string exeDir = System.IO.Path.GetDirectoryName(exePath);
+                string exePath = AppDomain.CurrentDomain.BaseDirectory;
+                string exeDir = Path.GetDirectoryName(exePath);
                 return exeDir;
             }
         }
@@ -108,6 +108,7 @@ namespace HedgeHex
 
             OpenFileDialog open = new OpenFileDialog()
             {
+                InitialDirectory = Path.Combine(ProgramPath,"tables"),
                 Title = "Select Translation Table",
                 Filter = "JSON File (.json) | *.json",
                 FileName = " "
@@ -164,6 +165,7 @@ namespace HedgeHex
         {
             OpenFileDialog open = new OpenFileDialog()
             {
+                InitialDirectory = ProgramPath,
                 Title = "Import Text File",
                 Filter = "Text File (.txt) | *.txt",
                 FileName = " "

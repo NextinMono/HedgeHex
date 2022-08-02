@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="import.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="tables\Common.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
