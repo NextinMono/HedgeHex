@@ -22,6 +22,7 @@ namespace HedgeHex
         public DialoguePreview()
         {
             InitializeComponent();
+            this.SizeChanged += new SizeChangedEventHandler(Window_SizeChanged);
         }
 
         public void PreviewChanges()
@@ -32,7 +33,14 @@ namespace HedgeHex
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Application.Current.Windows.OfType<MainWindow>().FirstOrDefault().preview = null;
+            if(Application.Current.Windows.OfType<MainWindow>().FirstOrDefault() != null)
+            {
+                Application.Current.Windows.OfType<MainWindow>().FirstOrDefault().preview = null;
+            }
+        }
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Text1.FontSize = (Width) / 25;
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HedgeHex"
         mc:Ignorable="d"
-        Title="Text Preview" Height="450" Width="800" Foreground="{x:Null}" ResizeMode="CanMinimize" Closing="Window_Closing">
+        Title="Text Preview" Height="310" Width="388" MinWidth="388" MinHeight="310" Foreground="{x:Null}" ResizeMode="CanResize" Closing="Window_Closing">
     <Window.Resources>
         <FontFamily x:Key="font" >/fonts/#FOT-Seurat Pro M</FontFamily>
     </Window.Resources>
@@ -17,8 +17,8 @@
     </Window.Background>
     <Grid>
 
-        <TextBlock x:Name="Text1" FontSize="20" HorizontalAlignment="Center" 
-               FontFamily="{StaticResource font}" Width="758" Foreground="White" Panel.ZIndex="1" VerticalAlignment="Center" Height="386">TEST
+        <TextBlock x:Name="Text1" FontSize="25" 
+               FontFamily="{StaticResource font}" MinWidth="368" Foreground="White" Panel.ZIndex="1" MinHeight="274.04" Margin="10,10,10,10">TEST
             <TextBlock.Effect>
                 <DropShadowEffect
       ShadowDepth="1.7"

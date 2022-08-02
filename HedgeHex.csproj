@@ -36,7 +36,7 @@
     <None Update="tables\In-Stage.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="theme.ini">
+    <None Update="theme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
