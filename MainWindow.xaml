@@ -1,0 +1,27 @@
+﻿<Window x:Class="HedgeHex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HedgeHex"
+        mc:Ignorable="d"
+        Title="HedgeHex" Height="323" Width="586" WindowStyle="SingleBorderWindow" Background="#FF1F1F1F" Opacity="1" ResizeMode="CanMinimize">
+    <Grid Background="#001F1F1F">
+        <TextBox x:Name="Textbox" Margin="9,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF484848" Foreground="White" BorderBrush="#FF484848" Height="36" FontSize="25" FontFamily="Microsoft YaHei UI Light" HorizontalAlignment="Left" Width="552"/>
+        <Button x:Name="Convert" Content="Convert" VerticalAlignment="Bottom" Height="46" Background="#FF3C7737" Foreground="White" BorderBrush="#FF3C7737" FontSize="25" Click="Convert_Click" FontFamily="Segoe UI" HorizontalAlignment="Right" Width="301"/>
+        <Button x:Name="TranslationTableButton" Content="Select Translation Table" VerticalAlignment="Top" Height="36" FontFamily="Microsoft YaHei UI Light" FontSize="22" Background="#FF484848" BorderBrush="#FF484848" Foreground="White" Click="TranslationTableButton_Click" Margin="9,115,0,0" HorizontalAlignment="Left" Width="552"/>
+        <TextBlock x:Name="ConvertTextLabel" HorizontalAlignment="Left" Margin="9,9,0,0" TextWrapping="Wrap" Text="Text that will be converted:" VerticalAlignment="Top" Height="30" Width="453" Foreground="White" FontSize="20" FontFamily="Microsoft YaHei UI Light"/>
+        <TextBlock x:Name="ConvertTextLabel_Copy" HorizontalAlignment="Left" Margin="9,80,0,0" TextWrapping="Wrap" Text="Translation Table that will be used:" VerticalAlignment="Top" Height="30" Width="552" Foreground="White" FontSize="20" FontFamily="Microsoft YaHei UI Light"/>
+        <Button x:Name="Import_Text" Content="Import File" HorizontalAlignment="Left" Margin="462,14,0,0" VerticalAlignment="Top" Width="99" Background="DimGray" BorderBrush="#FF2F2F2F" Foreground="White" Click="Import_Text_Click" FontFamily="Microsoft YaHei UI Light" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="PreviewButton" Content="Preview Text" VerticalAlignment="Bottom" Height="46" Background="#FFFF9144" Foreground="White" BorderBrush="#FFFF9144" FontSize="25" FontFamily="Segoe UI" Click="PreviewButton_Click" HorizontalAlignment="Left" Width="285"/>
+    </Grid>
+</Window>
