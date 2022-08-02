@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Path = System.IO.Path;
+using Salaros.Configuration;
 
 namespace HedgeHex
 {
@@ -36,15 +37,23 @@ namespace HedgeHex
             }
         }
 
+        string input;
+        string tableFileName;
+
+        public static string themeFile = Path.Combine(ProgramPath, "theme.ini");
+        public static ConfigParser themeParser = new ConfigParser(themeFile);
+
         public MainWindow()
         {
             InitializeComponent();
             if (!Directory.Exists(@"tables\"))
                 Directory.CreateDirectory(@"tables\");
+            SetTheme();
         }
-
-        string input;
-        string tableFileName;
+        private void SetTheme()
+        {
+            
+        }
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(Textbox.Text)) {
