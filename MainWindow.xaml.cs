@@ -39,16 +39,27 @@ namespace HedgeHex
         public MainWindow()
         {
             InitializeComponent();
+            if (!Directory.Exists(@"tables\"))
+                Directory.CreateDirectory(@"tables\");
         }
 
         string input;
         string tableFileName;
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(Textbox.Text)) {
+                MessageBoxResult result = MessageBox.Show("The text you would like to convert is empty. Are you sure you want to convert?", "HedgeHex", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                switch (result)
+                {
+                    case MessageBoxResult.No:
+                        return;
+                }
+            }
+
             input = Textbox.Text;
+
             SaveJson(new ConversionTable('A'));
-            if (Directory.Exists(@"tables\"))
-                Directory.CreateDirectory(@"tables\");
+
             if (!string.IsNullOrEmpty(tableFileName))
             {
                 var table = LoadTable(tableFileName);
@@ -100,30 +111,43 @@ namespace HedgeHex
 
                 if (result == MessageBoxResult.Yes) { Clipboard.SetText(output); }
             }
+            else
+            {
+                MessageBox.Show("Error converting. Did you set the translation table?", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
         }
 
         private void TranslationTableButton_Click(object sender, RoutedEventArgs e)
         {
-
-            OpenFileDialog open = new OpenFileDialog()
+            try
             {
-                InitialDirectory = Path.Combine(ProgramPath,"tables"),
-                Title = "Select Translation Table",
-                Filter = "JSON File (.json) | *.json",
-                FileName = " "
-            };
-            if (open.ShowDialog() == true)
-            {
-                DirectoryInfo d = new DirectoryInfo(@"tables\");
-                FileInfo[] translationTables = d.GetFiles("*.json", SearchOption.TopDirectoryOnly);
-                for (int i = 0; i < translationTables.Length; i++)
+                OpenFileDialog open = new OpenFileDialog()
                 {
-                    if (translationTables[i].Name == open.SafeFileName)
+                    InitialDirectory = Path.Combine(ProgramPath, "tables"),
+                    Title = "Select Translation Table",
+                    Filter = "JSON File (.json) | *.json",
+                    FileName = " "
+                };
+                if (open.ShowDialog() == true)
+                {
+                    DirectoryInfo d = new DirectoryInfo(@"tables\");
+                    FileInfo[] translationTables = d.GetFiles("*.json", SearchOption.TopDirectoryOnly);
+                    for (int i = 0; i < translationTables.Length; i++)
                     {
-                        tableFileName = open.SafeFileName;
+                        if (translationTables[i].Name == open.SafeFileName)
+                        {
+                            tableFileName = open.SafeFileName;
+                        }
                     }
+                    if (string.IsNullOrEmpty(tableFileName)) { MessageBox.Show("Error loading translation table. Are you sure this is a translation table?", "Error", MessageBoxButton.OK, MessageBoxImage.Error); }
                 }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show($"Error loading translation table: {exc.ToString()}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                throw;
             }
         }
 
@@ -172,16 +196,33 @@ namespace HedgeHex
             };
             if (open.ShowDialog() == true)
             {
-                StreamReader stream = new StreamReader(open.FileName);
-                Textbox.Text = stream.ReadToEnd();
-                input = stream.ReadToEnd();
-                MessageBox.Show($"Imported text file : {open.SafeFileName}", "HedgeHex", MessageBoxButton.OK);
+                try
+                {
+                    StreamReader stream = new StreamReader(open.FileName);
+                    Textbox.Text = stream.ReadToEnd();
+                    input = stream.ReadToEnd();
+                    MessageBox.Show($"Imported text file : {open.SafeFileName}", "HedgeHex", MessageBoxButton.OK);
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show($"Error loading text file: {exc.ToString()}","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+                    throw;
+                }
             }
         }
-        public DialoguePreview preview = null;
+        public DialoguePreview? preview = null;
         private void PreviewButton_Click(object sender, RoutedEventArgs e)
         {
-            if(preview == null)
+            if (string.IsNullOrEmpty(Textbox.Text))
+            {
+                MessageBoxResult result = MessageBox.Show("The text you would like to preview is empty. Continue?", "HedgeHex", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                switch (result)
+                {
+                    case MessageBoxResult.No:
+                        return;
+                }
+            }
+            if (preview == null)
             {
                 preview = new DialoguePreview();
                 preview.Show();
