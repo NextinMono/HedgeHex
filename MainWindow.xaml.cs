@@ -79,9 +79,9 @@ namespace HedgeHex
             Textbox.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[1]);
             Textbox.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[2]);
 
-            TranslationTableButton.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[0]);
-            TranslationTableButton.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[1]);
-            TranslationTableButton.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[2]);
+            TranslationTableButton.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[0]);
+            TranslationTableButton.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[1]);
+            TranslationTableButton.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[2]);
 
             Import_Text.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[4].Split(",")[0]);
             Import_Text.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[4].Split(",")[1]);
