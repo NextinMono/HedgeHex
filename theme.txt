@@ -1,0 +1,7 @@
+#FF1F1F1F // background color
+#FFFFFFFF // text color for labels
+#FF484848,#FF484848,#FFFFFFFF // texbox colors : background color , border color , text color
+#FF484848,#FF484848,#FFFFFFFF // translation table colors : background color , border color , text color
+#FF696969,#FF2F2F2F,#FFFFFFFF // import text colors : background color , border color , text color
+#FF3C7737,#FF3C7737,#FFFFFFFF // convert button colors : background color , border color , text color
+#FFFF9144,#FFFF9144,#FFFFFFFF // preview button colors : background color , border color , text color

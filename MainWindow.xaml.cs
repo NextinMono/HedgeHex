@@ -40,19 +40,60 @@ namespace HedgeHex
         string input;
         string tableFileName;
 
-        public static string themeFile = Path.Combine(ProgramPath, "theme.ini");
-        public static ConfigParser themeParser = new ConfigParser(themeFile);
-
+        public static string themeFile = Path.Combine(ProgramPath, "theme.txt");
+        string[] themeLines;
+        string modifiedThemeFile;
         public MainWindow()
         {
             InitializeComponent();
             if (!Directory.Exists(@"tables\"))
                 Directory.CreateDirectory(@"tables\");
-            SetTheme();
+
+            // comment removal
+            if (File.Exists(themeFile))
+            {
+                themeLines = File.ReadAllLines(themeFile);
+                for (int i = 0; i < File.ReadLines(themeFile).Count(); i++)
+                {
+                    if (!string.IsNullOrEmpty(themeLines[i]))
+                    {
+                        if (themeLines[i].Contains("//"))
+                        {
+                            themeLines[i] = themeLines[i].Replace(themeLines[i].Substring(themeLines[i].IndexOf("//")), "");
+                        }
+                        modifiedThemeFile += Environment.NewLine + themeLines[i];
+                    }
+                }
+                SetTheme();
+            }
+            this.Closing += new System.ComponentModel.CancelEventHandler(Window_Closing);
         }
         private void SetTheme()
         {
-            
+            this.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[0]);
+
+            ConvertTextLabel.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[1]);
+            TranslationLabel.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[1]);
+
+            Textbox.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[0]);
+            Textbox.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[1]);
+            Textbox.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[2].Split(",")[2]);
+
+            TranslationTableButton.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[0]);
+            TranslationTableButton.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[1]);
+            TranslationTableButton.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[3].Split(",")[2]);
+
+            Import_Text.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[4].Split(",")[0]);
+            Import_Text.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[4].Split(",")[1]);
+            Import_Text.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[4].Split(",")[2]);
+
+            Convert.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[5].Split(",")[0]);
+            Convert.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[5].Split(",")[1]);
+            Convert.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[5].Split(",")[2]);
+
+            PreviewButton.Background = (Brush)new BrushConverter().ConvertFrom(themeLines[6].Split(",")[0]);
+            PreviewButton.BorderBrush = (Brush)new BrushConverter().ConvertFrom(themeLines[6].Split(",")[1]);
+            PreviewButton.Foreground = (Brush)new BrushConverter().ConvertFrom(themeLines[6].Split(",")[2]);
         }
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
@@ -242,6 +283,15 @@ namespace HedgeHex
             {
                 preview.Text1.Text = Textbox.Text;
                 preview.PreviewChanges();
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(preview != null)
+            {
+                preview.Close();
+                preview = null;
             }
         }
     }
