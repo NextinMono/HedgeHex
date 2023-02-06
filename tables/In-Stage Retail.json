@@ -1,0 +1,312 @@
+{
+    "ConversionTable": [
+        {
+            "letter": "0",
+            "hexString": "00 00 00 F6"
+        },
+        {
+            "letter": "1",
+            "hexString": "00 00 00 F7"
+        },
+        {
+            "letter": "2",
+            "hexString": "00 00 00 F8"
+        },
+        {
+            "letter": "3",
+            "hexString": "00 00 00 F9"
+        },
+        {
+            "letter": "4",
+            "hexString": "00 00 00 FA"
+        },
+        {
+            "letter": "5",
+            "hexString": "00 00 00 FB"
+        },
+        {
+            "letter": "6",
+            "hexString": "00 00 00 FC"
+        },
+        {
+            "letter": "7",
+            "hexString": "00 00 00 FD"
+        },
+        {
+            "letter": "8",
+            "hexString": "00 00 00 FE"
+        },
+        {
+            "letter": "9",
+            "hexString": "00 00 00 FF"
+        },
+        {
+            "letter": "A",
+            "hexString": "00 00 01 2B"
+        },
+        {
+            "letter": "B",
+            "hexString": "00 00 01 28"
+        },
+        {
+            "letter": "C",
+            "hexString": "00 00 01 36"
+        },
+        {
+            "letter": "D",
+            "hexString": "00 00 01 2E"
+        },
+        {
+            "letter": "E",
+            "hexString": "00 00 01 37"
+        },
+        {
+            "letter": "F",
+            "hexString": "00 00 01 3A"
+        },
+        {
+            "letter": "G",
+            "hexString": "00 00 01 12"
+        },
+        {
+            "letter": "H",
+            "hexString": "00 00 01 25"
+        },
+        {
+            "letter": "I",
+            "hexString": "00 00 01 1B"
+        },
+        {
+            "letter": "J",
+            "hexString": "00 00 01 2A"
+        },
+        {
+            "letter": "K",
+            "hexString": "00 00 01 32"
+        },
+        {
+            "letter": "L",
+            "hexString": "00 00 01 20"
+        },
+        {
+            "letter": "M",
+            "hexString": "00 00 01 19"
+        },
+        {
+            "letter": "N",
+            "hexString": "00 00 01 35"
+        },
+        {
+            "letter": "O",
+            "hexString": "00 00 01 38"
+        },
+        {
+            "letter": "P",
+            "hexString": "00 00 01 27"
+        },
+        {
+            "letter": "Q",
+            "hexString": "00 00 01 42"
+        },
+        {
+            "letter": "R",
+            "hexString": "00 00 01 2F"
+        },
+        {
+            "letter": "S",
+            "hexString": "00 00 01 18"
+        },
+        {
+            "letter": "T",
+            "hexString": "00 00 01 24"
+        },
+        {
+            "letter": "U",
+            "hexString": "00 00 01 39"
+        },
+        {
+            "letter": "V",
+            "hexString": "00 00 01 3E"
+        },
+        {
+            "letter": "W",
+            "hexString": "00 00 01 21"
+        },
+        {
+            "letter": "X",
+            "hexString": "00 00 01 2C"
+        },
+        {
+            "letter": "Y",
+            "hexString": "00 00 01 01"
+        },
+        {
+            "letter": "Z",
+            "hexString": "00 00 01 3F"
+        },
+        {
+            "letter": "a",
+            "hexstring": "00 00 01 0B"
+        },
+        {
+            "letter": "b",
+            "hexstring": "00 00 01 22"
+        },
+        {
+            "letter": "c",
+            "hexstring": "00 00 01 1D"
+        },
+        {
+            "letter": "d",
+            "hexstring": "00 00 01 14"
+        },
+        {
+            "letter": "e",
+            "hexstring": "00 00 01 06"
+        },
+        {
+            "letter": "f",
+            "hexstring": "00 00 01 15"
+        },
+        {
+            "letter": "g",
+            "hexstring": "00 00 01 0D"
+        },
+        {
+            "letter": "h",
+            "hexstring": "00 00 01 0A"
+        },
+        {
+            "letter": "i",
+            "hexstring": "00 00 01 11"
+        },
+        {
+            "letter": "j",
+            "hexstring": "00 00 01 2D"
+        },
+        {
+            "letter": "k",
+            "hexstring": "00 00 01 1C"
+        },
+        {
+            "letter": "l",
+            "hexstring": "00 00 01 1A"
+        },
+        {
+            "letter": "m",
+            "hexstring": "00 00 01 07"
+        },
+        {
+            "letter": "n",
+            "hexstring": "00 00 01 09"
+        },
+        {
+            "letter": "o",
+            "hexstring": "00 00 01 02"
+        },
+        {
+            "letter": "p",
+            "hexstring": "00 00 01 0E"
+        },
+        {
+            "letter": "q",
+            "hexstring": "00 00 01 3B"
+        },
+        {
+            "letter": "r",
+            "hexstring": "00 00 01 10"
+        },
+        {
+            "letter": "s",
+            "hexstring": "00 00 01 05"
+        },
+        {
+            "letter": "t",
+            "hexstring": "00 00 01 08"
+        },
+        {
+            "letter": "u",
+            "hexstring": "00 00 01 03"
+        },
+        {
+            "letter": "v",
+            "hexstring": "00 00 01 0C"
+        },
+        {
+            "letter": "w",
+            "hexstring": "00 00 01 0F"
+        },
+        {
+            "letter": "x",
+            "hexString": "00 00 01 30"
+        },
+        {
+            "letter": "y",
+            "hexstring": "00 00 01 1F"
+        },
+        {
+            "letter": "z",
+            "hexstring": "00 00 01 29"
+        },
+        {
+            "letter": " ",
+            "hexstring": "00 00 01 04"
+        },
+        {
+            "letter": ".",
+            "hexstring": "00 00 01 13"
+        },
+        {
+            "letter": ",",
+            "hexstring": "00 00 01 26"
+        },
+        {
+            "letter": "'",
+            "hexstring": "00 00 01 1E"
+        },
+        {
+            "letter": "?",
+            "hexstring": "00 00 01 31"
+        },
+        {
+            "letter": "!",
+            "hexstring": "00 00 01 23"
+        },
+        {
+            "letter": "-",
+            "hexstring": "00 00 01 00"
+        },
+        {
+            "letter": "(",
+            "hexstring": "00 00 01 33"
+        },
+        {
+            "letter": ")",
+            "hexstring": "00 00 01 34"
+        },
+        {
+            "letter": "*",
+            "hexstring": "00 00 01 16"
+        },
+        {
+            "letter": "#",
+            "hexstring": "00 00 01 17"
+        },
+        {
+            "letter": ":",
+            "hexstring": "00 00 01 3D"
+        },
+        {
+            "letter": "&",
+            "hexstring": "00 00 01 40"
+        },
+        {
+            "letter": "newline",
+            "hexstring": "00 00 00 00"
+        },
+        {
+            "letter": "quote",
+            "hexstring": "00 00 01 3C"
+        }
+    ]
+}
